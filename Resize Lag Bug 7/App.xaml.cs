@@ -89,8 +89,16 @@ namespace Resize_Lag_Bug_7 {
                 }
             };
 
+            //IOS/WINDOWS FRAME RATE MONITOR
+            DateTime lastUpdateDateTime = DateTime.Now;
+            abs2.SizeChanged += delegate {
+                if (lastUpdateDateTime != DateTime.Now) {
+                    Debug.WriteLine("CURRENT FPS " + 1 / (DateTime.Now - lastUpdateDateTime).TotalSeconds);
+                    lastUpdateDateTime = DateTime.Now;
+                }
+            };
             //ANDROID FRAME RATE MONITOR
-#if ANDROID
+/*#if ANDROID
             bool frameRateMonitorAttached = false;
             mainPage.HandlerChanged += delegate {
                 if (!frameRateMonitorAttached) {
@@ -101,7 +109,7 @@ namespace Resize_Lag_Bug_7 {
                 
             };
             
-#endif
+#endif*/
 
         }
 #if ANDROID
