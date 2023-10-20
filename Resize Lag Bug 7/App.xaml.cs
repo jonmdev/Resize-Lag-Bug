@@ -89,7 +89,7 @@ namespace Resize_Lag_Bug_7 {
                 }
             };
 
-            //IOS/WINDOWS FRAME RATE MONITOR
+            //GENERIC FRAME RATE MONITOR
             DateTime lastUpdateDateTime = DateTime.Now;
             abs2.SizeChanged += delegate {
                 if (lastUpdateDateTime != DateTime.Now) {
